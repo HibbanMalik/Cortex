@@ -44,6 +44,16 @@ def get_time():
     current_time = now.strftime("%H:%M:%S")
     speak(f"The current time is {current_time}")
 
+def clean_command(command):
+    command = command.strip().lower()
+
+    if command.startswith("cortex "):
+        command = command.replace("cortex ", "", 1)
+    elif command == "cortex":
+        command = ""
+
+    return command
+
 def process_command(command):
     if not command:
         return True
@@ -93,6 +103,7 @@ def run_assistant():
             speak("Please choose text or voice.")
             continue
 
+        command = clean_command(command)
         running = process_command(command)
 
 if __name__ == "__main__":
