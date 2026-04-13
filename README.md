@@ -30,7 +30,7 @@ It can listen to voice commands, speak responses, and perform basic tasks like o
 Clone the repository:
 
 ```bash
-git clone hhttps://github.com/HibbanMalik/Cortex
+git clone https://github.com/HibbanMalik/Cortex
 cd cortex
 
 Install dependencies:
