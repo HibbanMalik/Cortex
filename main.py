@@ -2,12 +2,12 @@ import datetime
 import webbrowser
 import pyttsx3
 
-engine = pyttsx3.init()
-
 def speak(text):
     print(f"CORTEX: {text}")
+    engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
+    engine.stop()
 
 def greet():
     speak("Hello Hibban. I am ready. How can I assist you?")
@@ -18,7 +18,7 @@ def get_time():
     speak(f"The current time is {current_time}")
 
 def process_command(command):
-    if command == "hello":
+    if command in ["hello", "hi", "hey"]:
         speak("Hello! What can I do for you?")
 
     elif command == "time":
