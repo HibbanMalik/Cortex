@@ -1,4 +1,5 @@
 import datetime
+import webbrowser   # NEW
 
 def greet():
     print("CORTEX: Hello Hibban. I am ready. How can I assist you?")
@@ -14,6 +15,18 @@ def process_command(command):
     
     elif command == "time":
         get_time()
+    
+    elif command == "open google":
+        print("CORTEX: Opening Google...")
+        webbrowser.open("https://www.google.com")
+    
+    elif command == "open youtube":
+        print("CORTEX: Opening YouTube...")
+        webbrowser.open("https://www.youtube.com")
+    
+    elif command == "open sfsu":
+        print("CORTEX: Opening SFSU website...")
+        webbrowser.open("https://www.sfsu.edu")
     
     elif command == "bye":
         print("CORTEX: Shutting down. Goodbye!")
