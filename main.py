@@ -45,30 +45,30 @@ def get_time():
     speak(f"The current time is {current_time}")
 
 def process_command(command):
-    if command in ["hello", "hi", "hey"]:
+    if not command:
+        return True
+
+    if "hello" in command or "hi" in command or "hey" in command:
         speak("Hello! What can I do for you?")
 
-    elif command == "time":
+    elif "time" in command:
         get_time()
 
-    elif command == "open google":
+    elif "open google" in command or ("google" in command and "open" in command):
         speak("Opening Google")
         webbrowser.open("https://www.google.com")
 
-    elif command == "open youtube":
+    elif "open youtube" in command or ("youtube" in command and "open" in command):
         speak("Opening YouTube")
         webbrowser.open("https://www.youtube.com")
 
-    elif command == "open sfsu":
+    elif "open sfsu" in command or ("sfsu" in command and "open" in command):
         speak("Opening S F S U website")
         webbrowser.open("https://www.sfsu.edu")
 
-    elif command == "bye":
+    elif "bye" in command or "exit" in command or "quit" in command:
         speak("Shutting down. Goodbye!")
         return False
-
-    elif command == "":
-        pass
 
     else:
         speak("Sorry, I don't understand that command.")
